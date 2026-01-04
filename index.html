@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XV Años - [Nombre de la Quinceañera]</title>
+    <meta name="description" content="¡Acompáñanos a celebrar los XV años! 20 de Junio, 2026">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #d946ef 0%, #f472b6 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(217, 70, 239, 0.95) 0%, rgba(244, 114, 182, 0.95) 100%);
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "✨";
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .hero-date {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-location {
+            font-size: 1.2rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Info Section */
+        .info-section {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid #f472b6;
+        }
+
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            color: #d946ef;
+            margin-bottom: 2rem;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .detail-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #f472b6;
+        }
+
+        .detail-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-title {
+            font-weight: 600;
+            color: #d946ef;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+        }
+
+        .detail-content {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .detail-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Message Section */
+        .message-section {
+            background: linear-gradient(135deg, #d946ef 0%, #f472b6 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .message-box {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .message-quote {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d946ef 0%, #f472b6 100%);
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(217, 70, 239, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(217, 70, 239, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-date {
+                font-size: 2rem;
+            }
+
+            .info-title {
+                font-size: 2rem;
+            }
+
+            .event-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Decorative elements */
+        .decorative-line {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #f472b6, transparent);
+            margin: 2rem auto;
+        }
+
+        .sparkle-divider {
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">[Nombre de la Quinceañera]</h1>
+        <p class="hero-subtitle">Mis XV Años</p>
+        <div class="decorative-line"></div>
+        <p class="hero-date">20 de Junio, 2026</p>
+        <p class="hero-location">León, Guanajuato</p>
+
+        <div class="nav-links">
+            <a href="index.html">Invitación</a>
+            <a href="contrato.html">Contrato</a>
+            <a href="logistica.html">Logística</a>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-card">
+                <h2 class="info-title">Detalles del Evento</h2>
+                <div class="decorative-line"></div>
+
+                <div class="event-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">⛪</div>
+                        <h3 class="detail-title">Ceremonia Religiosa</h3>
+                        <div class="detail-content">
+                            <p><strong>1:00 PM</strong></p>
+                            <p>Capilla María Auxiliadora</p>
+                            <p>Fraccionamiento El Dorado</p>
+                            <p>León, Gto.</p>
+                            <p style="margin-top: 1rem; font-size: 0.9em; color: #999;">(Hora por confirmar)</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">🎉</div>
+                        <h3 class="detail-title">Recepción</h3>
+                        <div class="detail-content">
+                            <p><strong>4:00 PM - 10:00 PM</strong></p>
+                            <p>Salón Andaluz</p>
+                            <p>León, Gto.</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">👗</div>
+                        <h3 class="detail-title">Código de Vestimenta</h3>
+                        <div class="detail-content">
+                            <p>Formal / Elegante</p>
+                            <p style="margin-top: 1rem; font-size: 0.9em; color: #999;">(Por confirmar)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="message-section">
+        <div class="container">
+            <div class="message-box">
+                <p>"Hoy comienzo a escribir una nueva página de mi vida, y quiero que seas parte de este momento tan especial. Tu presencia hará que este día sea inolvidable."</p>
+                <p class="message-quote">Con cariño ✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="info-title">Confirma tu Asistencia</h2>
+            <div class="decorative-line"></div>
+            <p style="margin: 2rem 0; color: #666; font-size: 1.1rem;">
+                Por favor, confirma tu asistencia antes del 1 de junio de 2026
+            </p>
+            <a href="https://wa.me/5214779203776?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20años" class="cta-button">
+                Confirmar por WhatsApp
+            </a>
+            <p style="margin-top: 2rem; color: #999;">
+                [Nombre del Contratante]<br>
+                Tel: [Teléfono]
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Placeholder) -->
+    <section class="info-section" style="background: #fce7f3;">
+        <div class="container">
+            <h2 class="info-title">Galería de Fotos</h2>
+            <div class="decorative-line"></div>
+            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-top: 2rem;">
+                Las fotos de la sesión previa se mostrarán aquí próximamente
+            </p>
+            <p style="text-align: center; color: #999; margin-top: 1rem;">
+                (Pendiente de sesión fotográfica)
+            </p>
+            <div class="sparkle-divider">✨ ✨ ✨</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p style="font-weight: 600; font-size: 1.2rem;">Producciones Foro 7</p>
+        <p>Fotografía, Video e Invitaciones Web</p>
+        <p>WhatsApp: 477-920-3776</p>
+        <p>foro7producciones@gmail.com</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #999;">
+            Invitación digital creada con amor por Foro 7
+        </p>
+    </footer>
+</body>
+</html>
