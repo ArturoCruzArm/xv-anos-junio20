@@ -287,6 +287,24 @@
         }
     </style>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* RSVP personalizado */
+        #personalizedWelcome { display:none; background:rgba(217,70,239,0.1); border:2px solid #d946ef; border-radius:16px; padding:1.5rem; margin:1.5rem auto; max-width:600px; text-align:center; }
+        #guestWelcomeText { font-size:1.1rem; color:#374151; margin-bottom:0.5rem; font-weight:500; }
+        #guestPassesText { color:#d946ef; font-weight:600; font-size:1rem; }
+        #rsvp { background:#fce7f3; padding:3rem 2rem; }
+        .rsvp-form { max-width:500px; margin:0 auto; }
+        .form-group { margin-bottom:1.2rem; text-align:left; }
+        .form-group label { display:block; font-weight:600; color:#374151; margin-bottom:0.4rem; font-size:0.9rem; }
+        .form-group input, .form-group select, .form-group textarea { width:100%; padding:0.75rem 1rem; border:2px solid #f9a8d4; border-radius:10px; font-size:1rem; font-family:'Montserrat',sans-serif; background:white; color:#333; transition:border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline:none; border-color:#d946ef; }
+        .form-group textarea { resize:vertical; min-height:80px; }
+        .btn-rsvp { display:block; width:100%; padding:1rem; background:linear-gradient(135deg,#d946ef,#f472b6); color:white; border:none; border-radius:50px; font-size:1.1rem; font-weight:700; cursor:pointer; transition:all 0.3s; margin-top:1rem; font-family:'Montserrat',sans-serif; }
+        .btn-rsvp:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(217,70,239,0.4); }
+        .btn-rsvp:disabled { opacity:0.7; cursor:not-allowed; }
+        #successMessage { display:none; background:#d1fae5; color:#065f46; padding:1.5rem; border-radius:12px; text-align:center; font-weight:600; font-size:1.05rem; margin-top:1rem; }
+    </style>
 </head>
 <body>
     <!-- Hero Section -->
@@ -355,20 +373,57 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- RSVP Section -->
+    <section id="rsvp">
         <div class="container">
             <h2 class="info-title">Confirma tu Asistencia</h2>
             <div class="decorative-line"></div>
-            <p style="margin: 2rem 0; color: #666; font-size: 1.1rem;">
-                Por favor, confirma tu asistencia antes del 1 de junio de 2026
+
+            <!-- Bienvenida personalizada (visible solo con ?inv=TOKEN) -->
+            <div id="personalizedWelcome">
+                <p id="guestWelcomeText"></p>
+                <p id="guestPassesText"></p>
+            </div>
+
+            <p style="margin: 1.5rem 0 1rem; color: #666; font-size: 1rem; text-align:center;">
+                Por favor confirma tu asistencia antes del 1 de junio de 2026
             </p>
-            <a href="https://wa.me/524775014602?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Estrella%20Naomi" class="cta-button">
-                Confirmar por WhatsApp
-            </a>
-            <p style="margin-top: 2rem; color: #999;">
-                Mayra Itzel Hernandez<br>
-                Tel: 477 501 4602
+
+            <form class="rsvp-form" id="rsvpForm">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Tu nombre completo</label>
+                    <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="attendance"><i class="fas fa-check-circle"></i> ¿Asistirás?</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">Selecciona...</option>
+                        <option value="si">Sí, asistiré con gusto</option>
+                        <option value="no">No podré asistir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests"><i class="fas fa-users"></i> Número de personas</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment-alt"></i> Mensaje para Estrella (opcional)</label>
+                    <textarea id="message" name="message" placeholder="Escribe un mensaje de cariño..."></textarea>
+                </div>
+                <button type="submit" class="btn-rsvp">
+                    <i class="fas fa-paper-plane"></i> Enviar Confirmación
+                </button>
+                <div id="successMessage"></div>
+            </form>
+
+            <p style="margin-top: 2rem; color: #999; text-align:center; font-size:0.9rem;">
+                ¿Dudas? Contacta a Mayra Itzel · <a href="https://wa.me/524775014602" style="color:#d946ef;">477 501 4602</a>
             </p>
         </div>
     </section>
