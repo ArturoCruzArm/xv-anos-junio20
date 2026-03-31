@@ -57,21 +57,29 @@
 
         .contract-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #1f2937;
+            padding-bottom: 1rem;
         }
 
         .contract-title {
-            font-size: 2.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
             color: #1f2937;
-            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.05em;
         }
 
-        .contract-subtitle {
-            font-size: 1.25rem;
+        .contract-company {
+            font-size: 1rem;
             font-weight: 600;
             color: #374151;
+            margin-top: 0.25rem;
+        }
+
+        .contract-address {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
         }
 
         .section {
@@ -79,27 +87,42 @@
         }
 
         .section-title {
-            font-size: 1.125rem;
+            font-size: 0.95rem;
             font-weight: bold;
             margin-bottom: 0.75rem;
             color: #1f2937;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.25rem;
+        }
+
+        .section-number {
+            margin-right: 0.5rem;
         }
 
         .section-content {
-            margin-left: 1.5rem;
+            margin-left: 0.5rem;
         }
 
         .section-content p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
-        .section-content ul, .section-content ol {
-            margin-left: 2rem;
+        .section-content ul {
+            margin-left: 1.5rem;
             margin-bottom: 0.75rem;
         }
 
         .section-content li {
             margin-bottom: 0.25rem;
+        }
+
+        .section-content ol {
+            margin-left: 1.5rem;
+        }
+
+        .section-content ol li {
+            margin-bottom: 0.4rem;
         }
 
         .highlight {
@@ -113,43 +136,66 @@
             margin: 1.5rem 0;
         }
 
+        .package-box {
+            background-color: #fce7f3;
+            padding: 1rem;
+            border-left: 4px solid #d946ef;
+            margin: 0.75rem 0;
+        }
+
+        .costs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.75rem 0;
+        }
+
+        .costs-table td {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .costs-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .costs-table .row-discount td {
+            color: #059669;
+        }
+
+        .costs-table .row-total td {
+            background-color: #fef3c7;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        .costs-table .row-apartado td {
+            background-color: #f0fdf4;
+        }
+
+        .costs-table .row-saldo td {
+            background-color: #fef2f2;
+            font-weight: bold;
+        }
+
         .signatures {
             margin-top: 4rem;
+            display: flex;
+            gap: 4rem;
         }
 
-        .signature-section {
-            margin-bottom: 3rem;
+        .signature-block {
+            flex: 1;
         }
 
-        .signature-title {
-            font-weight: 600;
-            margin-bottom: 2rem;
+        .signature-line {
+            margin-top: 3rem;
+            border-top: 2px solid #000;
+            padding-top: 0.5rem;
         }
 
         .text-justify {
             text-align: justify;
-        }
-
-        .package-details {
-            background-color: #fce7f3;
-            padding: 1rem;
-            border-left: 4px solid #d946ef;
-            margin: 1rem 0;
-        }
-
-        .price-breakdown {
-            background-color: #fef3c7;
-            padding: 1rem;
-            border-radius: 0.375rem;
-            margin: 1rem 0;
-        }
-
-        .drone-highlight {
-            background-color: #dbeafe;
-            padding: 1rem;
-            border-left: 4px solid #3b82f6;
-            margin: 1rem 0;
-            border-radius: 0.375rem;
         }
 
         .nav-links {
@@ -216,8 +262,9 @@
                 padding: 1.5rem;
             }
 
-            .contract-title {
-                font-size: 2rem;
+            .signatures {
+                flex-direction: column;
+                gap: 2rem;
             }
         }
 
@@ -247,7 +294,6 @@
             <a href="index.html">Invitación</a>
             <a href="contrato.html">Contrato</a>
             <a href="logistica.html">Logística</a>
-        
             <a href="invitados.html">Invitados</a>
         </div>
         <button class="print-button" onclick="window.print()">
@@ -260,216 +306,141 @@
 
     <div class="contract-container">
         <div class="contract-header">
-            <h1 class="contract-title">FORO 7</h1>
-            <h2 class="contract-subtitle">CONTRATO DE SERVICIOS FOTOGRÁFICOS Y VIDEOGRÁFICOS</h2>
+            <h1 class="contract-title">CONTRATO DE SERVICIOS</h1>
+            <p class="contract-company">Foro 7 Producciones — Fotografía y Video Profesional</p>
+            <p class="contract-address">Padilla 112, Cumbres de Arbide, León, Gto. &bull; Tel: 477 920 3776 &bull; foro7.invitados.org</p>
         </div>
 
         <div class="section">
-            <h3 class="section-title">DATOS DE LAS PARTES</h3>
+            <h3 class="section-title"><span class="section-number">1.</span>DATOS DEL CLIENTE</h3>
             <div class="section-content">
-                <p><span class="highlight">PRESTADOR DE SERVICIOS:</span></p>
-                <p style="margin-left: 1.5rem; margin-bottom: 0.75rem;">Foro 7 - Juan Arturo Cruz Armenta</p>
-                <p><span class="highlight">CONTRATANTE:</span></p>
-                <p style="margin-left: 1.5rem;"><strong>Mayra Itzel Hernandez Martinez</strong></p>
-                <p style="margin-left: 1.5rem;">Columba 118, Villas de San Juan, León, Gto.</p>
-                <p style="margin-left: 1.5rem;"><strong>Tel:</strong> 477 501 4602</p>
+                <p><span class="highlight">Nombre:</span> Mayra Itzel Hernandez Martinez</p>
+                <p><span class="highlight">Teléfono:</span> 477 501 4602</p>
             </div>
         </div>
 
         <hr class="divider">
 
         <div class="section">
-            <h3 class="section-title">I. OBJETO DEL CONTRATO</h3>
-            <div class="section-content">
-                <p class="text-justify">
-                    El PRESTADOR se compromete a proporcionar los servicios de fotografía y videografía profesionales para los XV Años de <strong>ESTRELLA NAOMI LOZANO HERNANDEZ</strong>, conforme al siguiente detalle:
-                </p>
-
-                <div class="package-details">
-                    <p class="highlight">PAQUETE CONTRATADO: FOTOGRAFÍA Y VIDEO (PAQUETE 1)</p>
-                </div>
-
-                <p class="highlight" style="margin-top: 1rem; margin-bottom: 0.5rem;">El paquete incluye:</p>
-                <ul>
-                    <li>Cobertura completa: <strong>Sesión previa, misa y fiesta</strong></li>
-                    <li><strong>100 Fotos del Evento Impresas</strong> en tamaño <strong>5x7 pulgadas</strong></li>
-                    <li><strong>1 Película USB</strong> editada, musicalizada y titulada</li>
-                    <li><strong>1 Videoclip</strong> para proyectar en el salón de la sesión previa y fotos del recuerdo</li>
-                    <li><strong>1 Caja impresa</strong> para la USB</li>
-                    <li><strong>1 Foto Ampliada</strong> a tamaño <strong>50x60 cm</strong> con marco</li>
-                    <li><strong>1 Caja impresa</strong> para las fotografías</li>
-                    <li><strong>1 Sesión fotográfica</strong> antes del evento o el día del evento</li>
-                    <li>Cubre <strong>1 hora de ceremonia y 6 horas de recepción</strong></li>
-                </ul>
-            </div>
-        </div>
-
-        <hr class="divider">
-
-        <div class="section">
-            <h3 class="section-title">II. DATOS DEL EVENTO</h3>
+            <h3 class="section-title"><span class="section-number">2.</span>DATOS DEL EVENTO</h3>
             <div class="section-content">
                 <p><span class="highlight">Tipo de evento:</span> XV Años</p>
-                <p><span class="highlight">Quinceañera:</span> <strong>Estrella Naomi Lozano Hernandez</strong></p>
-                <p><span class="highlight">Mamá:</span> Mayra Itzel Hernandez Martinez</p>
-                <p><span class="highlight">Papá:</span> José Juan Lozano Bárcenas</p>
-                <p><span class="highlight">Padrinos:</span> Claudia Ivette Hernandez Martinez y Luis Manuel Garcia Chavez</p>
-                <p><span class="highlight">Fecha del evento:</span> Sábado 20 de junio de 2026</p>
-                <p><span class="highlight">Sesión fotográfica previa:</span> Por definir</p>
-                <p><span class="highlight">Hora de la Ceremonia (Misa):</span> 1:00 PM</p>
-                <p><span class="highlight">Lugar de la Ceremonia:</span> Parroquia San Francisco de Asís</p>
-                <p><span class="highlight">Hora de la Recepción:</span> Por definir</p>
-                <p><span class="highlight">Lugar de la Recepción:</span> Salón Peñón de San Juan</p>
-                <p><span class="highlight">Dirección del Salón:</span> San Juan 101, Villas de San Juan, León, Gto.</p>
+                <p><span class="highlight">Festejada:</span> Estrella Naomi Lozano Hernandez</p>
+                <p><span class="highlight">Fecha:</span> 20 de junio de 2026</p>
+                <p><span class="highlight">Hora de inicio:</span> 13:00 hrs</p>
+                <p><span class="highlight">Ceremonia:</span> San Francisco de Asís</p>
+                <p><span class="highlight">Recepción:</span> Salón Peñón de San Juan 101, Villas de San Juan</p>
             </div>
         </div>
 
         <hr class="divider">
 
         <div class="section">
-            <h3 class="section-title">III. CONDICIONES ECONÓMICAS</h3>
+            <h3 class="section-title"><span class="section-number">3.</span>PAQUETE CONTRATADO: PAQUETE COMPLETO</h3>
             <div class="section-content">
-                <p class="highlight" style="margin-bottom: 0.5rem;">Desglose del servicio:</p>
-                <div class="price-breakdown">
-                    <p>Paquete 1 Fotografía y Video: $7,000.00 MXN</p>
+                <p style="margin-bottom: 0.5rem;">El presente paquete incluye:</p>
+                <div class="package-box">
+                    <ul>
+                        <li>100 fotografías impresas en formato 5x7"</li>
+                        <li>Película en USB editada y musicalizada</li>
+                        <li>Videoclip para proyección en evento</li>
+                        <li>Fotografía ampliada 50x60 cm con marco</li>
+                        <li>Cobertura: 1 hora de ceremonia + 6 horas de fiesta</li>
+                    </ul>
                 </div>
-
-                <p><span class="highlight">Monto total del servicio:</span> $7,000.00 MXN (Siete mil pesos 00/100 M.N.)</p>
-                <p><span class="highlight">Apartado entregado:</span> $1,000.00 MXN (Mil pesos 00/100 M.N.)</p>
-                <p><span class="highlight">Fecha de entrega del apartado:</span> 3 de marzo de 2026</p>
-                <p><span class="highlight">Forma de pago del apartado:</span> Transferencia bancaria BBVA</p>
-                <p style="margin-left: 1.5rem; font-size: 0.9em; color: #666;">Cuenta: 4152 3137 6890 8985</p>
-                <p style="margin-left: 1.5rem; font-size: 0.9em; color: #666;">Titular: Juan Arturo Cruz Armenta</p>
-                <p><span class="highlight">Saldo pendiente:</span> $6,000.00 MXN (Seis mil pesos 00/100 M.N.)</p>
-                <p style="margin-top: 0.5rem;"><span class="highlight">Fecha límite de liquidación:</span> 12 de junio de 2026</p>
-                <p style="font-style: italic; font-size: 0.875rem;">(8 días antes del evento)</p>
             </div>
         </div>
 
         <hr class="divider">
 
         <div class="section">
-            <h3 class="section-title">IV. FORMA DE ENTREGA</h3>
+            <h3 class="section-title"><span class="section-number">4.</span>DESGLOSE DE COSTOS</h3>
             <div class="section-content">
-                <p class="highlight" style="margin-bottom: 0.5rem;">Entrega Digital:</p>
-                <ul style="margin-bottom: 0.75rem;">
-                    <li>Todo el material fotográfico y videográfico en formato digital será entregado posterior al evento</li>
-                    <li>Todas las fotos editadas en alta resolución</li>
-                    <li>Video completo editado, musicalizado y titulado</li>
-                    <li>Videoclip para proyección en el salón</li>
-                </ul>
-
-                <p class="highlight" style="margin-bottom: 0.5rem;">Entrega Física:</p>
-                <ul>
-                    <li>Una vez concluido el evento, se seleccionarán las 100 fotografías para impresión</li>
-                    <li>Confirmación de conformidad del video editado</li>
-                    <li>El material físico (fotos impresas, USB con cajas impresas, foto 50x60 cm enmarcada) será entregado una vez completada la selección y aprobación</li>
-                    <li>Tiempo estimado de entrega del material físico: 30-45 días después del evento</li>
-                </ul>
+                <table class="costs-table">
+                    <tr>
+                        <td>Paquete Completo</td>
+                        <td>$7,500 MXN</td>
+                    </tr>
+                    <tr class="row-discount">
+                        <td>Descuento</td>
+                        <td>-$500 MXN</td>
+                    </tr>
+                    <tr class="row-total">
+                        <td>COSTO TOTAL</td>
+                        <td>$7,000 MXN</td>
+                    </tr>
+                    <tr class="row-apartado">
+                        <td>Apartado recibido (efectivo)</td>
+                        <td>$1,000 MXN</td>
+                    </tr>
+                    <tr class="row-saldo">
+                        <td>SALDO RESTANTE</td>
+                        <td>$6,000 MXN</td>
+                    </tr>
+                </table>
             </div>
         </div>
 
         <hr class="divider">
 
         <div class="section">
-            <h3 class="section-title">V. OBLIGACIONES DEL PRESTADOR</h3>
-            <div class="section-content">
-                <ol>
-                    <li>Realizar la sesión fotográfica previa en la fecha acordada</li>
-                    <li>Realizar la cobertura fotográfica y videográfica profesional del evento (misa y recepción)</li>
-                    <li>Realizar tomas aéreas con dron durante el evento</li>
-                    <li>Realizar edición profesional del material fotográfico y videográfico</li>
-                    <li>Entregar todos los productos físicos especificados en el paquete</li>
-                    <li>Entregar el material digital completo</li>
-                    <li>Crear y entregar la invitación web digital personalizada</li>
-                    <li>Cumplir con todos los entregables detallados en el contrato</li>
-                </ol>
-            </div>
-        </div>
-
-        <hr class="divider">
-
-        <div class="section">
-            <h3 class="section-title">VI. OBLIGACIONES DEL CONTRATANTE</h3>
-            <div class="section-content">
-                <ol>
-                    <li>Liquidar el saldo pendiente a más tardar 8 días antes del evento</li>
-                    <li>Facilitar el acceso a las locaciones del evento (capilla y salón)</li>
-                    <li>Coordinar la fecha, hora y lugar de la sesión fotográfica previa (cuando esté listo vestido, ramo y uñas)</li>
-                    <li>Confirmar la hora exacta de la misa (actualmente tentativa a la 1:00 PM)</li>
-                    <li>Seleccionar las 100 fotografías para impresión física</li>
-                    <li>Confirmar la aprobación del video editado</li>
-                    <li>Proporcionar información necesaria para la invitación web (nombres completos, mensaje, etc.)</li>
-                    <li>Proporcionar cualquier información adicional necesaria para el servicio</li>
-                    <li>Obtener los permisos necesarios para el uso del dron en las locaciones</li>
-                </ol>
-            </div>
-        </div>
-
-        <hr class="divider">
-
-        <div class="section">
-            <h3 class="section-title">VII. CLÁUSULAS ADICIONALES</h3>
-            <div class="section-content">
-                <p class="text-justify" style="margin-bottom: 0.5rem;">
-                    <span class="highlight">1. MODIFICACIONES:</span> Cualquier modificación al presente contrato deberá ser acordada por ambas partes por escrito.
-                </p>
-
-                <p class="text-justify" style="margin-bottom: 0.5rem;">
-                    <span class="highlight">2. CANCELACIÓN:</span> En caso de cancelación por parte del CONTRATANTE, el apartado entregado no será reembolsable.
-                </p>
-
-                <p class="text-justify" style="margin-bottom: 0.5rem;">
-                    <span class="highlight">3. DERECHOS DE AUTOR:</span> El PRESTADOR conserva los derechos de autor del material creado, pero otorga al CONTRATANTE licencia de uso personal del mismo.
-                </p>
-
-                <p class="text-justify" style="margin-bottom: 0.5rem;">
-                    <span class="highlight">4. CONTINGENCIAS:</span> En caso de enfermedad o emergencia del PRESTADOR, este se compromete a proporcionar un fotógrafo/videógrafo de reemplazo con capacidades similares.
-                </p>
-
-                <p class="text-justify" style="margin-bottom: 0.5rem;">
-                    <span class="highlight">5. CONDICIONES CLIMÁTICAS:</span> En caso de condiciones climáticas adversas que impidan la realización de la sesión fotográfica exterior o el uso del dron, se reprogramará en una fecha mutuamente conveniente o se ajustará el servicio según sea necesario.
-                </p>
-
-                <p class="text-justify" style="margin-bottom: 0.5rem;">
-                    <span class="highlight">6. PERMISOS:</span> El CONTRATANTE se compromete a obtener los permisos necesarios de las locaciones para la realización de fotografía, video profesional y operación de dron.
-                </p>
-
-                <p class="text-justify" style="margin-bottom: 0.5rem;">
-                    <span class="highlight">7. USO DEL DRON:</span> El uso del dron está sujeto a condiciones climáticas favorables y regulaciones de aviación vigentes. En caso de no poder realizar tomas con dron por causas de fuerza mayor, se aplicará un ajuste proporcional al precio.
-                </p>
-
-                <p class="text-justify" style="margin-bottom: 0.5rem;">
-                    <span class="highlight">8. HORARIOS:</span> La hora de la misa actualmente está programada para la 1:00 PM pero puede cambiar. El CONTRATANTE se compromete a notificar cualquier cambio de horario con al menos 7 días de anticipación.
-                </p>
-            </div>
-        </div>
-
-        <hr class="divider">
-
-        <div class="section">
-            <h3 class="section-title">VIII. ACEPTACIÓN</h3>
+            <h3 class="section-title"><span class="section-number">5.</span>FORMA DE PAGO</h3>
             <div class="section-content">
                 <p class="text-justify">
-                    Ambas partes manifiestan su conformidad con los términos establecidos en el presente contrato y lo firman en León, Guanajuato, a los 3 días del mes de marzo de 2026.
+                    El cliente ha entregado un apartado de <strong>$1,000 MXN</strong> en fecha <strong>3 de marzo de 2026</strong> mediante <strong>efectivo</strong>. El saldo restante de <strong>$6,000 MXN</strong> deberá liquidarse a más tardar el día del evento, antes del inicio de los servicios contratados.
                 </p>
             </div>
         </div>
 
+        <hr class="divider">
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">6.</span>COMPROMISOS DE FORO 7 PRODUCCIONES</h3>
+            <div class="section-content">
+                <ol type="a">
+                    <li>Presentarse puntualmente en los lugares y horarios acordados con el equipo profesional necesario para la cobertura del evento.</li>
+                    <li>Entregar el material fotográfico y de video en un plazo no mayor a 60 días hábiles posteriores al evento.</li>
+                    <li>Garantizar la calidad profesional de todos los productos y servicios incluidos en el paquete contratado.</li>
+                    <li>Resguardar el material digital del evento por un periodo de 6 meses a partir de la fecha de entrega.</li>
+                </ol>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h3 class="section-title"><span class="section-number">7.</span>COMPROMISOS DEL CLIENTE</h3>
+            <div class="section-content">
+                <ol type="a">
+                    <li>Liquidar el saldo restante en tiempo y forma según lo establecido en la cláusula de forma de pago.</li>
+                    <li>Informar con al menos 15 días de anticipación cualquier cambio en la fecha, hora o lugar del evento.</li>
+                    <li>En caso de cancelación, el monto del apartado no será reembolsable. Si la cancelación se realiza con menos de 7 días de anticipación, se cobrará el 50% del costo total.</li>
+                    <li>Facilitar el acceso y las condiciones necesarias para que el equipo de Foro 7 Producciones pueda realizar su trabajo adecuadamente.</li>
+                    <li>Recoger el material entregable en un plazo no mayor a 30 días después de ser notificado de su disponibilidad.</li>
+                </ol>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <p class="text-justify" style="margin-bottom: 2rem;">
+            Ambas partes manifiestan estar de acuerdo con los términos de este contrato y lo firman en la ciudad de León, Guanajuato, a <strong>3 de marzo de 2026</strong>.
+        </p>
+
         <div class="signatures">
-            <div class="signature-section">
-                <p class="signature-title">PRESTADOR DE SERVICIOS</p>
-                <div style="margin-top: 3rem; border-top: 2px solid #000; padding-top: 0.5rem; max-width: 300px;">
+            <div class="signature-block">
+                <p class="highlight">Foro 7 Producciones</p>
+                <div class="signature-line">
                     <p style="font-weight: 600;">Juan Arturo Cruz Armenta</p>
-                    <p>Foro 7</p>
+                    <p style="font-size: 0.875rem; color: #6b7280;">El prestador de servicios</p>
                 </div>
             </div>
 
-            <div class="signature-section">
-                <p class="signature-title">CONTRATANTE</p>
-                <div style="margin-top: 3rem; border-top: 2px solid #000; padding-top: 0.5rem; max-width: 300px;">
+            <div class="signature-block">
+                <p class="highlight">&nbsp;</p>
+                <div class="signature-line">
                     <p style="font-weight: 600;">Mayra Itzel Hernandez Martinez</p>
-                    <p>Tel: 477 501 4602</p>
+                    <p style="font-size: 0.875rem; color: #6b7280;">El cliente</p>
                 </div>
             </div>
         </div>
@@ -483,7 +454,6 @@
         <p>Padilla 112, Cumbres de Arbide, León, Gto.</p>
     </div>
     <script src="visitas.js?v=1"></script>
-
-<script src="js/foro7-footer.js"></script>
+    <script src="js/foro7-footer.js"></script>
 </body>
 </html>
