@@ -336,6 +336,11 @@
         </div>
     </div>
 
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="audio/invitacion-estrella-naomi.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Hero Section -->
     <section class="hero">
         <h1 class="hero-title">Estrella Naomi</h1>
@@ -514,9 +519,11 @@
 (function(){
     const splash = document.getElementById('splashScreen');
     const btn = document.getElementById('openInvitation');
+    const audio = document.getElementById('bgMusic');
     if (!btn || !splash) return;
     btn.addEventListener('click', function(){
         splash.classList.add('hidden');
+        if (audio) audio.play().catch(()=>{});
     });
 })();
 </script>
@@ -576,6 +583,19 @@
     }
     if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',attachHandler);
     else attachHandler();
+})();
+</script>
+<!-- Music Toggle -->
+<button id="musicToggle" aria-label="Toggle music" style="position:fixed;bottom:20px;right:20px;z-index:9999;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.4);color:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;">&#9835;</button>
+<script>
+(function(){
+    const audio = document.getElementById('bgMusic');
+    const btn = document.getElementById('musicToggle');
+    let playing = false;
+    btn.addEventListener('click', function(){
+        if(playing){ audio.pause(); btn.style.opacity='0.6'; playing=false; }
+        else { audio.play().catch(()=>{}); btn.style.opacity='1'; playing=true; }
+    });
 })();
 </script>
 </body>
